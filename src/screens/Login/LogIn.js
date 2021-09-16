@@ -3,7 +3,24 @@ import { Link } from 'react-router-dom';
 import { Card } from '../../components/card/Card';
 import { CardButton } from '../../components/button/CardButton';
 import { CardInput } from '../../components/input/CardInput';
-import { P1, P2, Heading, A } from '../../GlobalStyles';
+import {
+	P1,
+	Hr,
+	Heading,
+	A,
+	TermsContainer,
+	CheckDiv,
+	Icons,
+	Footer,
+} from '../../GlobalStyles';
+import { CheckBoxInput } from '../../components/input/CheckBoxInput';
+import { IconDiv } from '../../components/icons/Icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+	faFacebookF,
+	faGoogle,
+	faTwitter,
+} from '@fortawesome/free-brands-svg-icons';
 
 export const LogIn = () => {
 	const click = () => {
@@ -13,18 +30,36 @@ export const LogIn = () => {
 	return (
 		<Card>
 			<Heading>Login</Heading>
-			<CardInput placeholder='E-mail Address' />
-			<CardInput placeholder='Password' />
-			<CardButton title='Log In' onclick={click} />
-			<P1>
-				Can't remember your Password? <A>Recover it.</A>
-			</P1>
-			<P2>
-				Don't have a Account?
-				<A>
-					<Link to='/SignUp'>Create it.</Link>
-				</A>
-			</P2>
+			<CardInput type='text' placeholder='E-mail Address' />
+			<CardInput type='password' placeholder='Password' />
+			<TermsContainer>
+				<CheckDiv>
+					<CheckBoxInput />
+					<P1>Remember Me</P1>
+				</CheckDiv>
+				<A>Forget Password? </A>
+			</TermsContainer>
+			<CardButton title='Log In' />
+			<Hr>Or</Hr>
+			<Icons>
+				<IconDiv>
+					<FontAwesomeIcon icon={faFacebookF} color='#202442' />
+				</IconDiv>
+				<IconDiv>
+					<FontAwesomeIcon icon={faGoogle} color='#202442' />
+				</IconDiv>
+				<IconDiv>
+					<FontAwesomeIcon icon={faTwitter} color='#202442' />
+				</IconDiv>
+			</Icons>
+			<Footer>
+				<P1>
+					Don't have an account?
+					<Link to='/SignUp'>
+						<A>Sign Up</A>
+					</Link>
+				</P1>
+			</Footer>
 		</Card>
 	);
 };

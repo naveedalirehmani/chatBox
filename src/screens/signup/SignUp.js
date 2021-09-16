@@ -3,26 +3,44 @@ import { Link } from 'react-router-dom';
 import { Card } from '../../components/card/Card';
 import { CardButton } from '../../components/button/CardButton';
 import { CardInput } from '../../components/input/CardInput';
-import { P1, P2, Heading, A } from '../../GlobalStyles';
+import {
+	P1,	
+	Heading,
+	A,
+	TermsContainer,
+	CheckDiv,
+	Footer,
+} from '../../GlobalStyles';
+import { CheckBoxInput } from '../../components/input/CheckBoxInput';
 
 export const SignUp = () => {
 	const click = () => {
-		return console.log('Sign Up');
+		return console.log('log in');
 	};
 
 	return (
 		<Card>
-			<Heading>SignUp</Heading>
-			<CardInput placeholder='Your Names' />
-			<CardInput placeholder='E-mail Address' />
-			<CardInput placeholder='Password' />
-			<CardButton title='Sign Up' onclick={click} />
-			<P1>
-				I agree with <A>Terms and Conditions.</A>
-			</P1>
-			<P2>
-				Already have an account? <A>Log In</A>
-			</P2>
+			<Heading>Sign Up</Heading>
+			<CardInput type='text' placeholder='User Name' />
+			<CardInput type='text' placeholder='E-mail Address' />
+			<CardInput type='password' placeholder='Create Password' />
+			<CardInput type='password' placeholder='Re-enter Password' />
+			<TermsContainer>
+				<CheckDiv>
+					<CheckBoxInput />
+					<P1>I Accept the</P1>
+					<A>Terms and Conditions </A>
+				</CheckDiv>
+			</TermsContainer>
+			<CardButton title='Sign Up' />
+			<Footer>
+				<P1>
+					Already have a account?
+					<Link to='/'>
+						<A>Log In</A>
+					</Link>
+				</P1>
+			</Footer>
 		</Card>
 	);
 };

@@ -1,4 +1,8 @@
 body {
-	background: rgb(10, 13, 26);
+	background: #33385a;
 	color: white;
+	font-family: 'Noto Sans JP', sans-serif;
+}
+a {
+	text-decoration: none;
 }

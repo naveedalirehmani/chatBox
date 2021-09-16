@@ -1,20 +1,11 @@
 import styled from 'styled-components';
 
 export const P1 = styled.p`
-	font-size: 14px;
+	font-size: 12px;
+	margin-left: 5px;
 	display: flex;
 	justify-content: center;
-	margin: auto;
-	padding-top: 10px;
-`;
-export const P2 = styled.p`
-	font-size: 14px;
-	margin-top: 20px;
-	border-top: 1px #3c7d77f0 solid;
-	padding-top: 10px;
-	display: flex;
-	justify-content: center;
-	padding-bottom: 10px;
+	color: #585e8b;
 `;
 
 export const Heading = styled.h1`
@@ -22,8 +13,50 @@ export const Heading = styled.h1`
 `;
 
 export const A = styled.li`
-	color: #22d896;
-	font-weight: bold;
-	margin-left: 5px;
+	color: #41cd7d;
 	list-style: none;
+	font-size: 12px;
+	margin-left: 5px;
+`;
+export const TermsContainer = styled.div`
+	display: flex;
+	justify-content: space-around;
+	margin-top: 5px;
+	align-items: center;
+`;
+export const CheckDiv = styled.div`
+	display: flex;
+	align-items: center;
+`;
+export const Hr = styled.p`
+	&:after {
+		background-color: white;
+		content: '';
+		display: inline-block;
+		height: 1px;
+		position: relative;
+		left: 5px;
+		vertical-align: middle;
+		width: 32%;
+	}
+	&:before {
+		background-color: white;
+		content: '';
+		display: inline-block;
+		height: 1px;
+		position: relative;
+		right: 5px;
+		vertical-align: middle;
+		width: 32%;
+	}
+`;
+
+export const Icons = styled.div`
+	display: flex;
+	justify-content: center;
+`;
+
+export const Footer = styled.div`
+	padding-top: 40px;
+	padding-bottom: 5px;
 `;
